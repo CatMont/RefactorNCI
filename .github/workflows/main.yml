@@ -39,7 +39,6 @@ jobs:
         poetry run coverage run -m pytest 
         poetry run coverage report
       working-directory: ${{ github.workspace }}/refactorNCI
-    - name: Coverage
 
 
     - name: Upload coverage report
