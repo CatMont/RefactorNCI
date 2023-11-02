@@ -29,7 +29,8 @@ jobs:
       run: cd refactorNCI && poetry run flake8 || true
 
     - name: Install pytest
-      run: cd RefactorNCI/RefactorNCI/refactorNCI && poetry add --dev pytest pytest-cov
+      run: poetry add --dev pytest pytest-cov
+      working-directory: $RefactorNCI/refactorNCI/refactornci
 
     - name: Test with coverage
       run: |
