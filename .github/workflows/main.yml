@@ -34,8 +34,9 @@ jobs:
 
     - name: Test with coverage
       run: |
-        cd refactorNCI && poetry run coverage run -m pytest
-        cd refactorNCI && poetry run coverage report -m
+        poetry run pytest --cov=pyproject.toml
+      working-directory: ${{ github.workspace }}/refactorNCI
+
 
     - name: Upload coverage report
       uses: codecov/codecov-action@v2
