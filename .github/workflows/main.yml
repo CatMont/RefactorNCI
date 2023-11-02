@@ -24,9 +24,13 @@ jobs:
         pip install poetry
         cd refactorNCI  # Navigate to the refactorNCI directory
         poetry install
-
+        
     - name: Lint with Flake8
       run: cd refactorNCI && poetry run flake8 || true
+
+    - name: Install pytest
+      run: poetry add --dev pytest pytest-cov
+      working-directory: ${{ github.workspace }}/refactorNCI
 
     - name: Test with coverage
       run: |
