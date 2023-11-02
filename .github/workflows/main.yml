@@ -30,7 +30,7 @@ jobs:
 
     - name: Install pytest
       run: poetry add --dev pytest pytest-cov
-      working-directory: ${{ github.workspace }}/RefactorNCI
+      working-directory: ${{ github.workspace }}/refactornci
 
     - name: Test with coverage
       run: |
