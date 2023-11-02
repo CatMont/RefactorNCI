@@ -35,9 +35,6 @@ jobs:
     - name: Test with coverage
       run: |
         poetry run pytest --cov=pyproject.toml
-        poetry add --dev coverage
-        poetry run coverage run -m pytest 
-        poetry run coverage report
       working-directory: ${{ github.workspace }}/refactorNCI
 
 
