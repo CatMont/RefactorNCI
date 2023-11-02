@@ -22,17 +22,19 @@ jobs:
     - name: Install dependencies
       run: |
         pip install poetry
+        cd refactorNCI  # Navigate to the refactorNCI directory
         poetry install
 
     - name: Lint with Flake8
-      run: poetry run flake8
+      run: cd refactorNCI && poetry run flake8
 
     - name: Test with coverage
       run: |
-        poetry run coverage run -m pytest
-        poetry run coverage report -m
+        cd refactorNCI && poetry run coverage run -m pytest
+        cd refactorNCI && poetry run coverage report -m
 
     - name: Upload coverage report
       uses: codecov/codecov-action@v2
       with:
         token: ${{ secrets.CODECOV_TOKEN }}  # Make sure to set up CODECOV_TOKEN in your repository secrets
+
